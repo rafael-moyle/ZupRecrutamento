@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Data.Interface.Service\Framework.Data.Interface.Service.csproj" />
+    <ProjectReference Include="..\Framework.Data.Interface\Framework.Data.Interface.csproj" />
+  </ItemGroup>
+
+</Project>
