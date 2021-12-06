@@ -3,31 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{8FD7B63E-2E5E-4F2A-BE29-0B70693D1FCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{8FD7B63E-2E5E-4F2A-BE29-0B70693D1FCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Model", "Repository.Model\Repository.Model.csproj", "{47FBE731-C364-4C75-BECC-C2AC0CE38918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Model", "Repository.Model\Repository.Model.csproj", "{47FBE731-C364-4C75-BECC-C2AC0CE38918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Interface", "Repository.Interface\Repository.Interface.csproj", "{36261E3C-73DB-4487-8352-32DF6DDB9111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Interface", "Repository.Interface\Repository.Interface.csproj", "{36261E3C-73DB-4487-8352-32DF6DDB9111}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Dto\Dto.csproj", "{71694F0B-AC6D-4E5B-B3F5-BC1A3473AF59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dto", "Dto\Dto.csproj", "{71694F0B-AC6D-4E5B-B3F5-BC1A3473AF59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{AEADA7C0-9D09-48B4-A64A-8F0EDB0F27DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{AEADA7C0-9D09-48B4-A64A-8F0EDB0F27DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Interface", "Service.Interface\Service.Interface.csproj", "{605F22BF-78DB-4E76-806B-978134F681D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Interface", "Service.Interface\Service.Interface.csproj", "{605F22BF-78DB-4E76-806B-978134F681D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{77BDBD88-EE68-49E3-A445-34866554EF24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{77BDBD88-EE68-49E3-A445-34866554EF24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ioc.Interface", "Ioc.Interface\Ioc.Interface.csproj", "{FB6D5409-C735-4597-8865-AD4FE3717BD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ioc.Interface", "Ioc.Interface\Ioc.Interface.csproj", "{FB6D5409-C735-4597-8865-AD4FE3717BD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ioc.Registrador", "Ioc.Registrador\Ioc.Registrador.csproj", "{B27F76B5-5370-4FFF-8C08-2ADCCBD5CBC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ioc.Registrador", "Ioc.Registrador\Ioc.Registrador.csproj", "{B27F76B5-5370-4FFF-8C08-2ADCCBD5CBC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ioc", "Ioc\Ioc.csproj", "{A70DD861-F0DB-4247-86AE-F90B6D4E2AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ioc", "Ioc\Ioc.csproj", "{A70DD861-F0DB-4247-86AE-F90B6D4E2AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Data.Interface", "Framework.Data.Interface\Framework.Data.Interface.csproj", "{A5D42AB0-E048-41FE-AA2F-F8306243E81C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Data.Interface", "Framework.Data.Interface\Framework.Data.Interface.csproj", "{A5D42AB0-E048-41FE-AA2F-F8306243E81C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Data.Interface.Service", "Framework.Data.Interface.Service\Framework.Data.Interface.Service.csproj", "{3B30AA21-65E0-4F78-9905-DA8ECE7A6C66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Data.Interface.Service", "Framework.Data.Interface.Service\Framework.Data.Interface.Service.csproj", "{3B30AA21-65E0-4F78-9905-DA8ECE7A6C66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Data", "Framework.Data\Framework.Data.csproj", "{920C3114-8ADC-49B7-A336-79858BF43E45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Data", "Framework.Data\Framework.Data.csproj", "{920C3114-8ADC-49B7-A336-79858BF43E45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Compartilhado", "Framework.Compartilhado\Framework.Compartilhado.csproj", "{7C36B8F1-773B-40A6-A6FA-0DF43B531C64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Validacao.Interface", "Service.Validacao.Interface\Service.Validacao.Interface.csproj", "{27160C26-7CF0-4CBF-A1E1-9FF004581FF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Validacao", "Service.Validacao\Service.Validacao.csproj", "{1544E25F-EA31-411C-A038-3EB09BCEE29F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +93,18 @@ Global
 		{920C3114-8ADC-49B7-A336-79858BF43E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{920C3114-8ADC-49B7-A336-79858BF43E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{920C3114-8ADC-49B7-A336-79858BF43E45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C36B8F1-773B-40A6-A6FA-0DF43B531C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C36B8F1-773B-40A6-A6FA-0DF43B531C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C36B8F1-773B-40A6-A6FA-0DF43B531C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C36B8F1-773B-40A6-A6FA-0DF43B531C64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27160C26-7CF0-4CBF-A1E1-9FF004581FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27160C26-7CF0-4CBF-A1E1-9FF004581FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27160C26-7CF0-4CBF-A1E1-9FF004581FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27160C26-7CF0-4CBF-A1E1-9FF004581FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1544E25F-EA31-411C-A038-3EB09BCEE29F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1544E25F-EA31-411C-A038-3EB09BCEE29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1544E25F-EA31-411C-A038-3EB09BCEE29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1544E25F-EA31-411C-A038-3EB09BCEE29F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

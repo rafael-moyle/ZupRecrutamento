@@ -13,6 +13,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using WebApi.Base;
+using WebApi.Filter;
 
 namespace WebApi
 {
@@ -97,8 +98,7 @@ namespace WebApi
 
             services.AddMvc(options =>
             {
-                //options.Filters.Add(typeof(ExceptionFilter));
-                //options.Filters.Add(typeof(SessionFilter));
+                options.Filters.Add(typeof(ExceptionFilter));
             })
             .AddControllersAsServices()
             .AddJsonOptions(options =>

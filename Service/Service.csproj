@@ -9,6 +9,7 @@
     <ProjectReference Include="..\Framework.Data.Interface.Service\Framework.Data.Interface.Service.csproj" />
     <ProjectReference Include="..\Repository.Interface\Repository.Interface.csproj" />
     <ProjectReference Include="..\Service.Interface\Service.Interface.csproj" />
+    <ProjectReference Include="..\Service.Validacao.Interface\Service.Validacao.Interface.csproj" />
   </ItemGroup>
 
 </Project>

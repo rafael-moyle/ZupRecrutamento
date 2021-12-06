@@ -3,6 +3,7 @@ using Repository.Interface.Funcionario;
 using Repository.Model;
 using Service.Base;
 using Service.Interface.Funcionario;
+using Service.Validacao.Interface.Funcionario;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,6 +12,7 @@ namespace Service.Funcionario
     public class FuncionarioService : BaseService, IFuncionarioService
     {
         public IFuncionarioRepository FuncionarioRepository { get; set; }
+        public IFuncionarioValidacao FuncionarioValidacao { get; set; }
 
 
         public void Atualizar(FuncionarioDto funcionario)
@@ -23,6 +25,8 @@ namespace Service.Funcionario
             modeloParaSalvar.NumeroChapa = funcionario.NumeroChapa?.Trim();
             modeloParaSalvar.Sobrenome = funcionario.Sobrenome?.Trim();
             modeloParaSalvar.Telefone = funcionario.Telefone?.Trim();
+
+            this.FuncionarioValidacao.ValidarAoAtualizar(modeloParaSalvar);
 
             this.FuncionarioRepository.Atualizar(modeloParaSalvar);
         }
@@ -37,6 +41,8 @@ namespace Service.Funcionario
             modeloParaSalvar.NumeroChapa = funcionario.NumeroChapa?.Trim();
             modeloParaSalvar.Sobrenome = funcionario.Sobrenome?.Trim();
             modeloParaSalvar.Telefone = funcionario.Telefone?.Trim();
+
+            this.FuncionarioValidacao.ValidarAoInserir(modeloParaSalvar);
 
             int resultado = this.FuncionarioRepository.Inserir(modeloParaSalvar);
 
@@ -64,6 +70,8 @@ namespace Service.Funcionario
         public void Remover(int id)
         {
             var modeloParaRemover = this.FuncionarioRepository.ObterModeloPeloId(id);
+
+            this.FuncionarioValidacao.ValidarAoRemover(modeloParaRemover);
 
             this.FuncionarioRepository.Remover(modeloParaRemover);
         }

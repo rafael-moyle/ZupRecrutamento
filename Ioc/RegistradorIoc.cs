@@ -9,6 +9,7 @@ using Ioc.Middleware;
 using Microsoft.Extensions.Configuration;
 using Repository.Base;
 using Service.Base;
+using Service.Validacao.Base;
 using System.Reflection;
 
 namespace Ioc
@@ -23,11 +24,6 @@ namespace Ioc
             _registrador = registrador;
             RegistrarModulos(builder, registrador);
 
-            //if (registrador is ITesteRegistrador testeRegistrador)
-            //    AbrirCicloVidaTeste(builder, testeRegistrador);
-            //else if (registrador is ICicloVidaRegistrador cicloVidaRegistrador)
-            //    AbrirCicloVida(builder, cicloVidaRegistrador);
-
             if (registrador is ICicloVidaRegistrador cicloVidaRegistrador)
             {
                 AbrirCicloVida(builder, cicloVidaRegistrador);
@@ -41,29 +37,6 @@ namespace Ioc
             registro.AtribuirCicloVida(_container);
         }
 
-        //private static void AbrirCicloVidaTeste(ContainerBuilder builder, ITesteRegistro registro)
-        //{
-        //    registro.ConfigurarTeste(builder);
-        //    _container = builder.Build();
-
-        //    registro.AtribuirCicloVida(_container);
-        //}
-
-        //private static void ConfigurarAutoMapper(ContainerBuilder builder, bool ehAmbienteTeste = false)
-        //{
-        //    builder.RegisterType<MoqObjeto>()
-        //        .AsSelf()
-        //        .As<IMoqObjeto>()
-        //        .InstancePerLifetimeScope();
-
-        //    builder.RegisterType<ConversorObjetos>()
-        //           .As<IObjetoFactory>()
-        //           .SingleInstance()
-        //           .UsingConstructor(typeof(bool))
-        //           .WithParameters(new[] { new NamedParameter("ehAmbienteTeste", ehAmbienteTeste) })
-        //           .PropertiesAutowired();
-        //}
-
         private static void ConfigurarHandler(ContainerBuilder builder)
         {
             // Registrar interceptador caso de erro, o rollback ou commit é automático
@@ -74,8 +47,7 @@ namespace Ioc
 
         private static void OnActivatingInstanceForTesting<TypeOf>(IActivatingEventArgs<TypeOf> e)
         {
-            //if (_registrador is ITesteRegistrador testeRegistro)
-            //    testeRegistro.OnActivatingInstance<TypeOf>(e);
+            
         }
 
         private static void RegistrarModulos(ContainerBuilder builder, IContainerRegistrador registrador)
@@ -88,36 +60,6 @@ namespace Ioc
                 .WithParameters(new[] {
                     new NamedParameter("connectionString", registrador.Configuration?.GetConnectionString("Default"))
                 });
-
-            //builder.RegisterType<CustomLogger>()
-            //    .As<ICustomLogger>()
-            //    .UsingConstructor(typeof(ConfigLog))
-            //    .InstancePerLifetimeScope()
-            //    .WithParameters(new[] {
-            //        new NamedParameter("configLog", new ConfigLog()
-            //        {
-            //            Tipo = registrador.Configuracoes.LogConfig.Tipo,
-            //            Ativo = registrador.Configuracoes.LogConfig.Ativo,
-            //            DbConfigLog = new DbConfigLog()
-            //            {
-            //                Provedor = "MySql.Data.MySqlClient",
-            //                StringConexao = conexaoDto.Default
-            //            }
-            //        })
-            //    });
-
-            //builder.Register<ConfiguracoesDto>((s) => registrador.Configuracoes)
-            //       .AsSelf()
-            //       .SingleInstance();
-
-            //builder.RegisterType<CommonUtils>()
-            //    .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies)
-            //    .AsSelf()
-            //    .SingleInstance();
-
-            //builder.RegisterType<MailUtils>()
-            //    .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies)
-            //    .AsSelf();
 
             builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseServiceRepository).Assembly.GetName()))
                 .Where(t => t.Name.EndsWith("Repository"))
@@ -137,14 +79,14 @@ namespace Ioc
                 .InstancePerLifetimeScope()
                 .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
 
-            //builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseFactory).Assembly.GetName()))
-            //    .Where(t => t.Name.EndsWith("Factory"))
-            //    .OnActivating(OnActivatingInstanceForTesting)
-            //    .AsImplementedInterfaces()
-            //    .InstancePerLifetimeScope()
-            //    .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
-            
-            //ConfigurarAutoMapper(builder, registrador is ITestRegistro);
+            builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseValidacao).Assembly.GetName()))
+                .Where(t => t.Name.EndsWith("Validacao"))
+                .AsImplementedInterfaces()
+                .EnableClassInterceptors()
+                .InterceptedBy(typeof(TransacaoInterceptador))
+                .InstancePerDependency()
+                .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
+
             ConfigurarHandler(builder);
 
             registrador.RegistrarComponentesInternos(builder);
