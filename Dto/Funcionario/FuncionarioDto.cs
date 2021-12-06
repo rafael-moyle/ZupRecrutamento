@@ -33,28 +33,6 @@ namespace Dto.Funcionario
         /// </summary>
         public string Nome { get; set; }
 
-        ///// <summary>
-        ///// Nome completo do funcionário
-        ///// </summary>
-        //public string NomeCompleto
-        //{
-        //    get
-        //    {
-        //        string nomeCompleto = $"{ this.Nome } { this.Sobrenome }";
-
-        //        return nomeCompleto.Trim();
-        //    }
-        //    set
-        //    {
-        //        string nomeCompleto = value;
-
-        //        List<string> nomePartes = nomeCompleto?.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList() ?? new List<string>();
-
-        //        this.Nome = nomePartes.FirstOrDefault();
-        //        this.Sobrenome = string.Join(" ", nomePartes.Skip(1));
-        //    }
-        //}
-
         /// <summary>
         /// Número de chapa do funcionário
         /// </summary>

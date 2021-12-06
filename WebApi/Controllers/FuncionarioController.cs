@@ -16,6 +16,8 @@ namespace WebApi.Controllers
         [Route("{id:int}/alterar-senha")]
         public IActionResult AlterarSenha([FromQuery] int id)
         {
+            throw new System.NotImplementedException();
+
             return Ok();
         }
         
