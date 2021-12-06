@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace Dto.Funcionario
 {
@@ -18,41 +19,41 @@ namespace Dto.Funcionario
         public string EmailPessoal { get; set; }
 
         /// <summary>
-        /// O líder deste funcionário
-        /// </summary>
-        public FuncionarioDto Lider { get; set; }
-        
-        /// <summary>
         /// Id do líder deste funcionário (também é um funcionário)
         /// </summary>
         public int? LiderId { get; set; }
+
+        /// <summary>
+        /// O nome do líder deste funcionário
+        /// </summary>
+        public string LiderNome { get; set; }
 
         /// <summary>
         /// Primeiro nome do funcionário
         /// </summary>
         public string Nome { get; set; }
 
-        /// <summary>
-        /// Nome completo do funcionário
-        /// </summary>
-        public string NomeCompleto
-        {
-            get
-            {
-                string nomeCompleto = $"{ this.Nome } { this.Sobrenome }";
+        ///// <summary>
+        ///// Nome completo do funcionário
+        ///// </summary>
+        //public string NomeCompleto
+        //{
+        //    get
+        //    {
+        //        string nomeCompleto = $"{ this.Nome } { this.Sobrenome }";
 
-                return nomeCompleto.Trim();
-            }
-            set
-            {
-                string nomeCompleto = value;
+        //        return nomeCompleto.Trim();
+        //    }
+        //    set
+        //    {
+        //        string nomeCompleto = value;
 
-                List<string> nomePartes = nomeCompleto?.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList() ?? new List<string>();
+        //        List<string> nomePartes = nomeCompleto?.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList() ?? new List<string>();
 
-                this.Nome = nomePartes.FirstOrDefault();
-                this.Sobrenome = string.Join(" ", nomePartes.Skip(1));
-            }
-        }
+        //        this.Nome = nomePartes.FirstOrDefault();
+        //        this.Sobrenome = string.Join(" ", nomePartes.Skip(1));
+        //    }
+        //}
 
         /// <summary>
         /// Número de chapa do funcionário

@@ -27,17 +27,20 @@ namespace Repository.Funcionario
             sql.AppendLine(
                 @"
                 SELECT 
-                  fun.email_corporativo
-                  , fun.email_pessoal
-                  , fun.id
-                  , fun.lider_id
-                  , fun.nome
-                  , fun.numero_chapa
-                  , fun.senha
-                  , fun.sobrenome
-                  , fun.telefone
+                  fun.email_corporativo EmailCorporativo
+                  , fun.email_pessoal EmailPessoal
+                  , fun.id Id
+                  , fun.lider_id LiderId
+                  , fun.nome Nome
+                  , fun.numero_chapa NumeroChapa
+                  , fun.senha Senha
+                  , fun.sobrenome Sobrenome
+                  , fun.telefone Telefone
+                  , RTRIM(CONCAT(lid.nome, ' ', lid.sobrenome)) LiderNome
                 FROM 
                   funcionario fun
+                LEFT JOIN
+                  funcionario lid on (lid.id = fun.lider_id)
                 WHERE
                   1 = 1 ");
 
